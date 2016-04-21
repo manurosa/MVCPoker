@@ -1,18 +1,18 @@
 ﻿@model WebApplication.Models.PokerInputModels
 
 @{
-    ViewBag.Title = "InputView";
+    ViewBag.Title = "Tell me more";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>InputView</h2>
+<h2>Tell me more</h2>
 
 @using (Html.BeginForm("Calculate","Input")) 
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>PokerInputModels</h4>
+        @*<h4>PokerInputModels</h4>*@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
