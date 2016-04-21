@@ -274,7 +274,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Input\Index.cshtml" />
-    <Content Include="Views\Output\OutputView.cshtml" />
+    <Content Include="Views\Output\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

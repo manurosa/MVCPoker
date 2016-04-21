@@ -12,7 +12,7 @@ namespace WebApplication.Controllers
         // GET: Input
         public ActionResult Index()
         {
-            return View();
+            return View(new PokerInputModels());
         }
 
         public ActionResult Calculate(PokerInputModels input)
@@ -26,7 +26,7 @@ namespace WebApplication.Controllers
             if (!ModelState.IsValid)
                 return View("Index", input);
 
-            return RedirectToAction("Index", "Results", input);
+            return RedirectToAction("Index","Output", input);
         }
     }
 }
