@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebApplication.Models;
+using WebApplication.Logic;
 
 namespace WebApplication.Controllers
 {
@@ -12,7 +13,8 @@ namespace WebApplication.Controllers
         // GET: Output
         public ActionResult Index(PokerInputModels input)
         {
-            PokerOutputModels output = input.Calculate();
+            Calculator calc = new Calculator();
+            PokerOutputModels output = calc.Calculate(input);
 
             return View(output);
         }

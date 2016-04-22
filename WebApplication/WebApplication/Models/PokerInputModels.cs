@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+using WebApplication.Logic;
 
 namespace WebApplication.Models
 {
@@ -28,22 +29,6 @@ namespace WebApplication.Models
         [Required, Range(0, int.MaxValue, ErrorMessage = "Value must be greater than 0")]
         [Display(Name = "Remaining Opponents")]
         public int RemainingOpp { get; set; }
-
-
-        public PokerOutputModels Calculate()
-        {
-            int cpr;
-
-            if (Ante.HasValue)
-                cpr = BigBlind + SmallBlind;
-            else
-                cpr = BigBlind + SmallBlind + Ante.Value * Players;
-
-            int csi = Stack / RemainingOpp;
-
-            int pn = csi * RemainingOpp;
-
-            return new PokerOutputModels(cpr, csi, pn);
-        }
+        
     }
 }
